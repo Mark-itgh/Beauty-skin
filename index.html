@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beauty Skin</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+   
+<div class="par"><span class="txy">Download android app</span>
+  <button onclick="downloadApk()"class="dbtn">Download</button>
+  <div class="imgscr" >
+    <div class="scr" >
+    <img src="1.jpg" alt="s" class="1">
+
+  </div>
+  </div>
+<div class="name">
+  Perfume Lotion
+  <img src="share.png" alt="s" onclick="sharePage()">
+</div>
+<div class="price">
+  <div><img src="tag.png" alt="s"> </div>
+  <div class="pr">
+    Price : 
+    <div class="phold">
+   <div><img src="cedi.png" alt="s"></div>  <div class="num">10</div> 
+   <div class="in">for one piece</div> 
+    </div>
+  </div>
+</div>
+
+<div class="dis">
+  <span class="h">20%</span>  discount on each piece for a pack!
+</div>
+<div class="order">
+  <div class="ortxt">
+    Order Now!
+</div>
+<div class="btn">
+  <div class="ch"><a href="tel:+233257714249"><button class="call"><img src="call.png" alt="s">Call</button></a></div>
+
+<div class="em"><a href="mailto:justboat53@gmail.com"><button class="email"> <img src="gmail.png" alt="s"> Email</button></a></div>
+
+</div>
+
+</div>
+</div>
+ <script src="Dash.js"></script>
+<script>
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'beauty app download ',
+                    text: 'www.google.com',
+                    url: window.location.href
+                })
+                .then(() => console.log('Shared successfully'))
+                .catch((error) => console.log('Error sharing:', error));
+            } else {
+                console.log('Web Share API not supported.');
+            }
+        }
+        
+  const s1 = document.querySelector('.scr');   
+  var c = 1;
+  
+    function slide() {
+      if (s1.innerHTML = '<img src="1.jpg" alt="s" class="1">') {
+      s1.innerHTML = '<img src="2.jpg" alt="p" class="1">';
+      }
+    }
+      
+    function slide2() {
+      if (s1.innerHTML = '<img src="2.jpg" alt="p" class="1">') {
+      s1.innerHTML = '<img src="3.jpg" alt="o" class="1">';
+      }
+    }
+  
+  function slide3() {
+      if (s1.innerHTML = '<img src="3.jpg" alt="o" class="1">') {
+      s1.innerHTML = '<img src="4.jpg" alt="u" class="1">';
+      }
+    }
+  
+  function slide4() {
+      if (s1.innerHTML = '<img src="4.jpg" alt="u" class="1">') {
+      s1.innerHTML = '<img src="5.jpg" alt="y" class="1">';
+      }
+    }
+  
+  function slide5() {
+      
+      s1.innerHTML = '<img src="1.jpg" alt="s" class="1">';
+      
+    }
+  
+  
+        setInterval(slide, 2000); // Move to the next div every 15 seconds
+  
+  setInterval(slide2, 4000); // Move to the next div every 15 seconds
+  
+  setInterval(slide3, 8000); // Move to the next div every 15 seconds
+        
+     setInterval(slide4, 12000); // Move to the next div every 15 seconds
+     
+        setInterval(slide5, 16000); // Move to the next div every 15 seconds
+        
+        function downloadApk() {
+            // Specify the path to your APK file
+            const apkFilePath = 'path/to/your/apk/file/app.apk';
+
+            // Create a temporary anchor element
+            const a = document.createElement('a');
+            a.href = apkFilePath;
+            a.download = 'app.apk'; // Set the file name
+
+            // Append the anchor element to the body
+            document.body.appendChild(a);
+
+            // Click the anchor element to trigger the download
+            a.click();
+
+            // Remove the anchor element
+            document.body.removeChild(a);
+        }
+        
+    </script>
+</body>
+</html>
